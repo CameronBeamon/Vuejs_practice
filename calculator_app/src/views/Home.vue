@@ -54,6 +54,7 @@ export default {
     },
     save_input: function (number) {
       if (this.method_selected == false) {
+        this.answer = "";
         this.first_number = this.answer + number;
         this.answer = this.first_number;
       }
@@ -66,6 +67,27 @@ export default {
     calculation: function () {
       if (this.method == "+") {
         this.answer = parseInt(this.first_number) + parseInt(this.second_number);
+        this.method_selected = false;
+        this.first_number = "";
+        this.second_number = "";
+      }
+      if (this.method == "-") {
+        this.answer = parseInt(this.first_number) - parseInt(this.second_number);
+        this.method_selected = false;
+        this.first_number = "";
+        this.second_number = "";
+      }
+      if (this.method == "/") {
+        this.answer = parseInt(this.first_number) / parseInt(this.second_number);
+        this.method_selected = false;
+        this.first_number = "";
+        this.second_number = "";
+      }
+      if (this.method == "*") {
+        this.answer = parseInt(this.first_number) * parseInt(this.second_number);
+        this.method_selected = false;
+        this.first_number = "";
+        this.second_number = "";
       }
     },
   },
